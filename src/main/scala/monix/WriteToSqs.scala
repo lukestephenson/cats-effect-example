@@ -1,10 +1,10 @@
-package io
+package monix
 
-import cats.effect.IO
+import monix.eval.Task
 
 object WriteToSqs {
-  def apply(message: String): IO[Unit] = {
-    IO {
+  def apply(message: String): Task[Unit] = {
+    Task {
       Thread.sleep(1000)
       println(s"Sending to SQS $message")
     }
